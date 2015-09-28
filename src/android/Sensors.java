@@ -38,11 +38,11 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
     mSensorManager = (SensorManager) ctx.getSystemService(Context.SENSOR_SERVICE);
 
     mPressure = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-
+    /*
     if ("get".equals(action)) {
       JSONObject options = args.optJSONObject(0);
 
-      /*
+      
       String title = options.optString("title");
       int theme = options.optInt("androidTheme", 1);
       JSONArray buttons = options.optJSONArray("buttonLabels");
@@ -63,13 +63,14 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
         dialog.dismiss();
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, -1));
       }
-      */
+      
       Log.v("sensors", "exec ok!!!!!!");
 
       return true;
     }
+    */
 
-    return false;
+    return true;
   }
 
   @Override
