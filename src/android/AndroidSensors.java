@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * @author fabiorogeriosj
  */
-public class Sensors extends CordovaPlugin implements SensorEventListener {
+public class AndroidSensors extends CordovaPlugin implements SensorEventListener {
 
   private SensorManager mSensorManager;
   private Sensor mPressure;
