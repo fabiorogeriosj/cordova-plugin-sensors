@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    xmlns:rim="http://www.blackberry.com/ns/widgets"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    id="br.com.fabiorogeriosj.cordova.sensors"
-    version="0.0.1">
-    <name>sensors</name>
-    <description>Cordova Sensors Plugin</description>
-    <license>Apache 2.0</license>
-    <keywords>cordova,sensors</keywords>
-    <repo>https://github.com/fabiorogeriosj/cordova-plugin-sensors.git</repo>
-    <issue>https://github.com/fabiorogeriosj/cordova-plugin-sensors/issues</issue>
+        id="cordova-plugin-sensors"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        version="0.0.1">
 
-    <js-module src="www/Sensors.js" name="Sensors">
-        <clobbers target="window.plugins.sensors" />
-    </js-module>
+  <name>Sensors</name>
 
-    <!-- android -->
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="AndroidSensors" >
-                <param name="android-package" value="br.com.fabiorogeriosj.cordova.sensors.AndroidSensors"/>
-            </feature>
-        </config-file>
-        <source-file src="src/android/AndroidSensors.java" target-dir="src/android" />
-    </platform>
+  <description>
+    Sensors.
+  </description>
+
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/Sensors.js" name="Sensors">
+    <clobbers target="window.plugins.sensors" />
+  </js-module>
+
+  
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Sensors">
+        <param name="android-package" value="com.fabiorogeriosj.plugins.AndroidSensors" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/com/fabiorogeriosj/plugins/AndroidSensors.java" target-dir="src/com/fabiorogeriosj/plugins"/>
+  </platform>
+
 </plugin>

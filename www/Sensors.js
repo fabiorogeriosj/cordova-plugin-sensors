@@ -1,7 +1,7 @@
 function Sensors() {
 }
 
-Sensors.prototype.get = function (options, successCallback, errorCallback) {
+Sensors.prototype.get = function (options, successCallback, errorCallback, duration) {
   cordova.exec(successCallback, errorCallback, "AndroidSensors", "get", [options]);
 };
 
@@ -9,9 +9,7 @@ Sensors.install = function () {
   if (!window.plugins) {
     window.plugins = {};
   }
-
   window.plugins.sensors = new Sensors();
-
   return window.plugins.sensors;
 };
 
