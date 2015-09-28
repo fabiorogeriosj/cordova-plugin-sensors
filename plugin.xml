@@ -22,6 +22,6 @@
                 <param name="android-package" value="br.com.fabiorogeriosj.cordova.sensors.AndroidSensors"/>
             </feature>
         </config-file>
-        <source-file src="src/android/AndroidSensors.java" target-dir="src/br/com/fabiorogeriosj/cordova/sensors" />
+        <source-file src="src/android/AndroidSensors.java" target-dir="src/android" />
     </platform>
 </plugin>
