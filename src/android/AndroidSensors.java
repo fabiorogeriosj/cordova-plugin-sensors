@@ -1,4 +1,4 @@
-package nl.xservices.plugins.sensors;
+package br.com.fabiorogeriosj.cordova.sensor;
 
 import android.os.Build;
 import android.text.TextUtils;

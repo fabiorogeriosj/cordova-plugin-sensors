@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin
-    xmlns="http://apache.org/cordova/ns/plugins/1.0"
-		id="cordova-plugin-sensors"
-    version="0.1.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="br.com.fabiorogeriosj.cordova.sensors"
+    version="0.0.1">
+    <name>Sensors</name>
+    <description>Cordova Sensors Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,sensors</keywords>
+    <repo>https://github.com/fabiorogeriosj/cordova-plugin-sensors.git</repo>
+    <issue>https://github.com/fabiorogeriosj/cordova-plugin-sensors/issues</issue>
 
-	<name>Sensors</name>
+    <js-module src="www/sensors.js" name="sensors">
+        <clobbers target="sensors" />
+    </js-module>
 
-	<description>Sensors that measure motion, orientation, and various environmental conditions.</description>
-
-	<author>Fábio Rogério SJ</author>
-
-	<license>MIT</license>
-
-	<keywords>Sensors, Motion sensors, Environmental sensors, Position sensors</keywords>
-
-	<repo>https://github.com/fabiorogeriosj/cordova-plugin-sensors.git</repo>
-
-	<issue>https://github.com/fabiorogeriosj/cordova-plugin-sensors/issues</issue>
-
-	<engines>
-		<engine name="cordova" version=">=3.0.0"/>
-	</engines>
-
-	<js-module src="www/Sensors.js" name="Sensors">
-		<clobbers target="window.plugins.sensors"/>
-	</js-module>
-
-	<!-- android -->
-	<platform name="android">
-		<config-file target="res/xml/config.xml" parent="/*">
-			<feature name="Sensors">
-				<param name="android-package" value="nl.xservices.plugins.sensors.Sensors"/>
-			</feature>
-		</config-file>
-		<source-file src="src/android/Sensors.java" target-dir="src/nl/xservices/plugins/sensors"/>
-	</platform>
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AndroidSensors" >
+                <param name="android-package" value="br.com.fabiorogeriosj.cordova.sensors.AndroidSensors"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/AndroidSensors.java" target-dir="src/br/com/fabiorogeriosj/cordova/sensors" />
+    </platform>
+</plugin>
