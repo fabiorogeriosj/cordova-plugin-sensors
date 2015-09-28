@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="br.com.fabiorogeriosj.cordova.sensors"
     version="0.0.1">
-    <name>Sensors</name>
+    <name>sensors</name>
     <description>Cordova Sensors Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,sensors</keywords>
