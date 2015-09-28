@@ -27,7 +27,7 @@ public class AndroidSensors extends CordovaPlugin implements SensorEventListener
   private Sensor mPressure;
   private CallbackContext _callbackContext; 
 
-  public Sensors() {
+  public AndroidSensors() {
     super();
   }
 
