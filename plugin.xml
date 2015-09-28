@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+		id="cordova-plugin-sensors"
+    version="0.1.0">
+
+	<name>Sensors</name>
+
+	<description>Sensors that measure motion, orientation, and various environmental conditions.</description>
+
+	<author>Fábio Rogério SJ</author>
+
+	<license>MIT</license>
+
+	<keywords>Sensors, Motion sensors, Environmental sensors, Position sensors</keywords>
+
+	<repo>https://github.com/fabiorogeriosj/cordova-plugin-sensors.git</repo>
+
+	<issue>https://github.com/fabiorogeriosj/cordova-plugin-sensors/issues</issue>
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0"/>
+	</engines>
+
+	<js-module src="www/Sensors.js" name="Sensors">
+		<clobbers target="window.plugins.sensors"/>
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Sensors">
+				<param name="android-package" value="nl.xservices.plugins.sensors.Sensors"/>
+			</feature>
+		</config-file>
+		<source-file src="src/android/Sensors.java" target-dir="src/nl/xservices/plugins/sensors"/>
+	</platform>
