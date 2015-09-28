@@ -23,9 +23,9 @@ import java.util.List;
  */
 public class AndroidSensors extends CordovaPlugin implements SensorEventListener {
 
-  private SensorManager mSensorManager;
-  private Sensor mPressure;
-  private CallbackContext _callbackContext; 
+  // private SensorManager mSensorManager;
+  // private Sensor mPressure;
+  // private CallbackContext _callbackContext; 
 
   public AndroidSensors() {
     super();
@@ -33,11 +33,11 @@ public class AndroidSensors extends CordovaPlugin implements SensorEventListener
 
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-    _callbackContext = callbackContext;
-    Context ctx = this.cordova.getActivity();
-    mSensorManager = (SensorManager) ctx.getSystemService(Context.SENSOR_SERVICE);
+    // _callbackContext = callbackContext;
+    // Context ctx = this.cordova.getActivity();
+    // mSensorManager = (SensorManager) ctx.getSystemService(Context.SENSOR_SERVICE);
 
-    mPressure = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+    // mPressure = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
     /*
     if ("get".equals(action)) {
       JSONObject options = args.optJSONObject(0);
@@ -69,27 +69,27 @@ public class AndroidSensors extends CordovaPlugin implements SensorEventListener
       return true;
     }
     */
-
+    Log.v("sensors", "exec ok!!!!!!");
     return true;
   }
 
-  @Override
-  public void onSensorChanged(SensorEvent event) {
-      float value = event.values[0];
-      Log.v("teste", "value: "+value);
-      _callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, value));
-      // Do something with this sensor data.
-  }
+  // @Override
+  // public void onSensorChanged(SensorEvent event) {
+  //     float value = event.values[0];
+  //     Log.v("teste", "value: "+value);
+  //     _callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, value));
+  //     // Do something with this sensor data.
+  // }
 
-  @Override
-  public void onAccuracyChanged(Sensor sensor, int accuracy) {
-      // Do something here if sensor accuracy changes.
-  }
+  // @Override
+  // public void onAccuracyChanged(Sensor sensor, int accuracy) {
+  //     // Do something here if sensor accuracy changes.
+  // }
 
-  public synchronized void get(final String sensor, final CallbackContext callbackContext) {
+  // public synchronized void get(final String sensor, final CallbackContext callbackContext) {
 
-    final CordovaInterface cordova = this.cordova;
-    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, 0));
+  //   final CordovaInterface cordova = this.cordova;
+  //   callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, 0));
 
-  }
+  // }
 }
