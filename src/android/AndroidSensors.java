@@ -1,4 +1,4 @@
-package br.com.fabiorogeriosj.cordova.sensor;
+package br.com.fabiorogeriosj.cordova.sensors;
 
 import android.os.Build;
 import android.text.TextUtils;
