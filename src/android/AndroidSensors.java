@@ -27,10 +27,9 @@ public class AndroidSensors extends CordovaPlugin { //implements SensorEventList
   // private Sensor mPressure;
   // private CallbackContext _callbackContext; 
 
-  public AndroidSensors() {
-    super();
-  }
 
+
+  @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
     // _callbackContext = callbackContext;

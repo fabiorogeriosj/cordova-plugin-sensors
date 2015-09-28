@@ -11,8 +11,8 @@
     <repo>https://github.com/fabiorogeriosj/cordova-plugin-sensors.git</repo>
     <issue>https://github.com/fabiorogeriosj/cordova-plugin-sensors/issues</issue>
 
-    <js-module src="www/sensors.js" name="sensors">
-        <clobbers target="sensors" />
+    <js-module src="www/Sensors.js" name="Sensors">
+        <clobbers target="window.plugins.sensors" />
     </js-module>
 
     <!-- android -->
