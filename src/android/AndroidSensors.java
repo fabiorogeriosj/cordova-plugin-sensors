@@ -77,7 +77,7 @@ public class AndroidSensors extends CordovaPlugin implements SensorEventListener
   public void onSensorChanged(SensorEvent event) {
       float value = event.values[0];
       Log.v("teste", "value: "+value);
-      callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, value));
+      _callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, value));
       // Do something with this sensor data.
   }
 
