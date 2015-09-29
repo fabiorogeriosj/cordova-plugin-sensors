@@ -4,6 +4,10 @@ The sensors are capable of providing raw data with high precision and accuracy, 
 
 At this moment this plugin is implemented only for Android!
 
+## Demos
+
+See in https://github.com/fabiorogeriosj/cordova-plugin-sensors-demo
+
 ## Install
 
     $ cordova plugin add https://github.com/fabiorogeriosj/cordova-plugin-sensors.git
