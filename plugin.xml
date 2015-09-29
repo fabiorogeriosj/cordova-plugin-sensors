@@ -1,34 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-sensors"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        version="0.0.1">
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.example.sensors"
+        version="0.7.0">
 
   <name>Sensors</name>
 
-  <description>
-    Sensors.
-  </description>
-
-  <license>MIT</license>
-
   <engines>
-    <engine name="cordova" version=">=3.0.0"/>
+    <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <js-module src="www/Sensors.js" name="Sensors">
-    <clobbers target="window.plugins.sensors" />
+  <asset src="www/sensors.js" target="js/sensors.js"/>
+
+  <js-module src="www/sensors.js" name="sensors">
+    <clobbers target="sensors" />
   </js-module>
 
-  
-  <!-- android -->
   <platform name="android">
+
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Sensors">
-        <param name="android-package" value="com.fabiorogeriosj.plugins.AndroidSensors" />
+        <param name="android-package" value="com.example.plugin.Sensors"/>
       </feature>
     </config-file>
-    <source-file src="src/android/com/fabiorogeriosj/plugins/AndroidSensors.java" target-dir="src/com/fabiorogeriosj/plugins"/>
+
+    <source-file src="src/android/Sensors.java" target-dir="src/com/example/plugin/"/>
   </platform>
+
 
 </plugin>
