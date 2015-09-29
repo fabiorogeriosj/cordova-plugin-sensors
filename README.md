@@ -83,4 +83,6 @@ Get values sensor.
 
 **TEMPERATURE** - Measures the temperature of the device in degrees Celsius (°C). 
 
-## For more information about sensors **Android** see [Android Sensors Overview](http://developer.android.com/guide/topics/sensors/sensors_overview.html)
+
+
+For more information about sensors **Android** see [Android Sensors Overview](http://developer.android.com/guide/topics/sensors/sensors_overview.html)
