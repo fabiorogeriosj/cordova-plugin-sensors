@@ -10,35 +10,39 @@ At this moment this plugin is implemented only for Android!
 
 ## Methods    
 
-### sensors.enableSensor("TYPE_SENSOR")
+#### sensors.enableSensor("TYPE_SENSOR")
 
 Enable sensor.
 
-### sensors.disableSensor()
+#### sensors.disableSensor()
 
 Disable sensor.
 
-### sensors.getState(sucessCallBack)
+#### sensors.getState(sucessCallBack)
 
 Get values sensor.
 
-## Using
+## Using in Ionic
 
 ```js
-    document.addEventListener("deviceready", function () {
-      
+  APP.controller("indexController", function ($scope, $interval){
+
       function onSuccess(values) {
           $scope.state = values[0];
       };
 
-      sensors.enableSensor("PROXIMITY");
+      document.addEventListener("deviceready", function () {
+        
+        sensors.enableSensor("PROXIMITY");
 
-      $interval(function(){
-        sensors.getState(onSuccess);
-      }, 100);
+        $interval(function(){
+          sensors.getState(onSuccess);
+        }, 100);
 
 
-    }, false);
+      }, false);
+
+  });
 ```
 
 ## Type sensors
