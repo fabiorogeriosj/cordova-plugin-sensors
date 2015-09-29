@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.example.sensors"
+        id="com.fabiorogeriosj.sensors"
         version="0.7.0">
 
   <name>Sensors</name>
@@ -19,11 +19,11 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Sensors">
-        <param name="android-package" value="com.example.plugin.Sensors"/>
+        <param name="android-package" value="com.fabiorogeriosj.plugin.Sensors"/>
       </feature>
     </config-file>
 
-    <source-file src="src/android/Sensors.java" target-dir="src/com/example/plugin/"/>
+    <source-file src="src/android/Sensors.java" target-dir="src/com/fabiorogeriosj/plugin/"/>
   </platform>
 
 

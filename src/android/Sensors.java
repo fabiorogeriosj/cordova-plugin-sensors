@@ -1,4 +1,4 @@
-package com.example.plugin;
+package com.fabiorogeriosj.plugin;
 
 import java.util.List;
 import org.apache.cordova.*;
@@ -140,7 +140,7 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
         } else if(this.TYPE_SENSOR.equals("GYROSCOPE")){
             list = this.sensorManager.getSensorList(Sensor.TYPE_GYROSCOPE);
         } else if(this.TYPE_SENSOR.equals("GYROSCOPE_UNCALIBRATED")){
-            list = this.sensorManager.getSensorList(Sensor.GYROSCOPE_UNCALIBRATED);
+            list = this.sensorManager.getSensorList(Sensor.TYPE_GYROSCOPE_UNCALIBRATED);
         } else if(this.TYPE_SENSOR.equals("LINEAR_ACCELERATION")){
             list = this.sensorManager.getSensorList(Sensor.TYPE_LINEAR_ACCELERATION);
         } else if(this.TYPE_SENSOR.equals("ROTATION_VECTOR")){
