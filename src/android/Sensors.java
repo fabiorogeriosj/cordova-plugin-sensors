@@ -17,9 +17,9 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
     public static int STARTING = 1;
     public static int RUNNING = 2;
     public static int ERROR_FAILED_TO_START = 3;
-    
-    // sensor result 
-    
+
+    // sensor result
+
     public long TIMEOUT = 30000;        // Timeout in msec to shut off listener
 
     int status;                         // status of listener
@@ -66,7 +66,7 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
      * @throws JSONException 
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        
+
         if (action.equals("start")) {
             this.TYPE_SENSOR = args.getString(0);
             this.start();
@@ -128,7 +128,7 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
             return this.status;
         }
 
-        // Get proximity sensor from sensor manager
+        // Get sensor from sensor manager
         @SuppressWarnings("deprecation")
         List<Sensor> list = new ArrayList<Sensor>();
         if(this.TYPE_SENSOR.equals("PROXIMITY")){
@@ -221,9 +221,9 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
         try {
             JSONArray value = new JSONArray();
             for(int i=0;i<event.values.length;i++){
-                
+
                     value.put(Float.parseFloat(event.values[i]+""));
-                
+
             }
 
             this.timeStamp = System.currentTimeMillis();
