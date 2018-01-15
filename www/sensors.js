@@ -6,14 +6,14 @@ module.exports = {
     },
 
     /**
-     *  Enable the proximity sensor. Needs to be called before getting the proximity state.
+     *  Enable the sensor. Needs to be called before getting the state.
      */
     enableSensor: function(TYPE_SENSOR) {
         cordova.exec(null, null, "Sensors", "start", [TYPE_SENSOR]);
     },
 
     /**
-     *  Disable the proximity sensor.
+     *  Disable the sensor.
      */
     disableSensor: function() {
         cordova.exec(null, null, "Sensors", "stop", []);
