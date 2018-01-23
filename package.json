@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QuentinRoy/cordova-plugin-sensors.git"
+    "url": "git+https://github.com/fabiorogeriosj/cordova-plugin-sensors.git"
   },
   "keywords": ["ecosystem:cordova", "cordova-android", "sensors"],
   "engines": {
