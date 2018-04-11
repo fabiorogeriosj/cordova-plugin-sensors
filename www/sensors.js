@@ -1,8 +1,8 @@
 /*global cordova, module*/
 
 module.exports = {
-    getState: function(successCallback) {
-        cordova.exec(successCallback, null, "Sensors", "getState", []);
+    getState: function(successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "Sensors", "getState", []);
     },
 
     /**
