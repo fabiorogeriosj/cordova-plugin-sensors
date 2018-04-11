@@ -75,8 +75,13 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
             this.stop();
         }
         else if (action.equals("getState")) {
+
+            // If its stopped then user needs to enable sensor using "start" method
+            if (this.status == Sensors.STOPPED) {
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, "Sensors disabled, run start method before getState"));
+            }
             // If not running, then this is an async call, so don't worry about waiting
-            if (this.status != Sensors.RUNNING) {
+            else if (this.status != Sensors.RUNNING) {
                 int r = this.start();
                 if (r == Sensors.ERROR_FAILED_TO_START) {
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.IO_EXCEPTION, Sensors.ERROR_FAILED_TO_START));
@@ -90,7 +95,9 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
                     }
                 }, 2000);
             }
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, getValue()));
+            else {
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, getValue()));
+            }
         } else {
             // Unsupported action
             return false;
@@ -194,6 +201,7 @@ public class Sensors extends CordovaPlugin implements SensorEventListener {
             this.sensorManager.unregisterListener(this);
         }
         this.setStatus(Sensors.STOPPED);
+        this.value = new JSONArray();
     }
 
     public void onAccuracyChanged(Sensor sensor, int accuracy) {

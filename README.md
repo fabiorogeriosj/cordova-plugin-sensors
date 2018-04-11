@@ -22,7 +22,7 @@ Enable sensor.
 
 Disable sensor.
 
-#### sensors.getState(sucessCallBack)
+#### sensors.getState(successCallback, errorCallback)
 
 Get values sensor.
 
@@ -34,13 +34,17 @@ Get values sensor.
       function onSuccess(values) {
           $scope.state = values[0];
       };
+      
+      function onError(error) {
+          throw error;
+      };
 
       document.addEventListener("deviceready", function () {
         
         sensors.enableSensor("PROXIMITY");
 
         $interval(function(){
-          sensors.getState(onSuccess);
+          sensors.getState(onSuccess, onError);
         }, 100);
 
 
